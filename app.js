@@ -15,8 +15,8 @@ app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
 // Khoi dong bodyParser middleware
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 // Khoi dong methodOverride middleware
 app.use(methodOverride('_method'))

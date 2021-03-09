@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
 // Hien thi form de nguoi dung thay doi bai viet
 router.get('/edit/:id', async (req, res) => {
   const note = await Note.findOne({ _id: req.params.id }).lean()
-  res.render('notes/edit', { notes })
+  res.render('notes/edit', { note })
 })
 
 // Cap nhap thay doi bai viet vao co so du lieu
