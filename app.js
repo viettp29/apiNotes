@@ -1,6 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
-const bodyParser = require('body-parser')
+// const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const connectDB = require('./config/db')
 
@@ -15,7 +15,7 @@ app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
 // Khoi dong bodyParser middleware
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // Khoi dong methodOverride middleware
@@ -36,4 +36,4 @@ app.use('/notes', notes)
 
 const PORT = process.env.PORT || 5000
 
-app.listen(PORT, () => console.log(`Server da khoi dong tai port ${PORT}`))
+app.listen(PORT, () => console.log(`Server da khoi dong tai port http://localhost:${PORT}`))
